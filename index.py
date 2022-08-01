@@ -123,7 +123,8 @@ for user in users:
         if cars:
             travelers += 1
             val_flights += len(friends_with_cars.get('flights', []))
-avg_flights = round((val_flights/travelers),5)
+avg = round((val_flights/travelers),5)
+avg_flights = avg
 # print(avg_flights)
 
             
