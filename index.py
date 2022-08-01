@@ -128,7 +128,7 @@ for user in users:
 
     except Exception as p:
         pass
-avg_flights = travelers/val_flights
+avg_flights = val_flights/travelers
 print (round(avg_flights, 5))
     # for friends in user:
     #     if friends == 'friends':
