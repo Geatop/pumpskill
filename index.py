@@ -124,7 +124,7 @@ for user in users:
             travelers += 1
             val_flights += len(friends_with_cars.get('flights', []))
 avg_flights = round((val_flights/travelers),5)
-print(avg_flights)
+# print(avg_flights)
 
             
         
