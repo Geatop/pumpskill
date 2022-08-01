@@ -112,9 +112,24 @@ for user in users:
 # print (vip_user)
 
 # point 5
-
+# pprint(users)
 travelers = 0
 val_flights = 0
+
+for user in users:
+    friends = user.get('friends', [])
+    for friends_with_cars in friends:
+        cars = friends_with_cars.get('cars', [])
+        if cars:
+            travelers += 1
+            val_flights += len(friends_with_cars.get('flights', []))
+avg_flights = round((val_flights/travelers),5)
+print(avg_flights)
+
+            
+        
+
+
 
 for user in users:
     friends = user.get('friends')
