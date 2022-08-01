@@ -1,7 +1,7 @@
 from pprint import pprint
 from dataset import users, countries
 
-#point 1
+# #point 1
 users_wrong_password = []
 # pprint(users)
 for user in users:
@@ -82,22 +82,33 @@ for user in users:
                #       pass
 # print (best_occupation)
 
-# point 4
+# # point 4
 # pprint (users)
 vip_user = 0
-c = 0 
+salary_friends = 0
+max_value = 0 
 for user in users:
-   for friends in user:
-      
-      if 'friends' in friends:
-         z = c
-         c = 0
-         for friend in user['friends']:
-            a = friend.get('job')
-            b = a.get('salary')
-            c += b
-            if c > z:
-               vip_user = user.get('name')
+    friends = user.get('friends', [])
+    salary_friends = 0
+    for joblist in friends:
+        job = joblist.get('job',[])
+        salary = job.get('salary',[])
+        salary_friends += salary
+        if max_value < salary_friends:
+            max_value = salary_friends
+            vip_user = user.get('name',[])       
+
+    # if friends:
+        # for friends in user:      
+        #     if 'friends' in friends:
+        #         z = c
+        #         c = 0
+        #         for friend in user['friends']:
+        #             a = friend.get('job')
+        #             b = a.get('salary')
+        #             c += b
+        #             if c > z:
+        #                 vip_user = user.get('name')
 # print (vip_user)
 
 # point 5
