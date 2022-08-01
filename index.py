@@ -123,8 +123,8 @@ for user in users:
         if cars:
             travelers += 1
             val_flights += len(friends_with_cars.get('flights', []))
-avg = round((val_flights/travelers),5)
-avg_flights = avg
+avg_flights =  round((val_flights/travelers),5)
+
 # print(avg_flights)
 
             
@@ -132,20 +132,20 @@ avg_flights = avg
 
 
 
-for user in users:
-    friends = user.get('friends')
-    try:
-        for friend in friends:
-            cars = friend.get('cars')
-            flights = friend.get('flights')
-            if cars != None and flights != None:
-                travelers += 1
-                val_flights += len(flights)
+# for user in users:
+#     friends = user.get('friends')
+#     try:
+#         for friend in friends:
+#             cars = friend.get('cars')
+#             flights = friend.get('flights')
+#             if cars != None and flights != None:
+#                 travelers += 1
+#                 val_flights += len(flights)
 
-    except Exception as p:
-        pass
-avg_flights = val_flights/travelers
-print (round(avg_flights, 5))
+#     except Exception as p:
+#         pass
+# avg_flights = val_flights/travelers
+# print (round(avg_flights, 5))
     # for friends in user:
     #     if friends == 'friends':
     #         if 'cars' in friends and 'flights' in friends:
